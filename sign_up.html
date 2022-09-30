@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Sign-Up</title>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
@@ -38,7 +38,7 @@
         font-family: "Roboto", sans-serif;
         text-transform: uppercase;
         outline: 0;
-        background: #4CAF50;
+        background: #e9381d;
         width: 100%;
         border: 0;
         padding: 15px;
@@ -49,16 +49,7 @@
         cursor: pointer;
         }
         .form button:hover,.form button:active,.form button:focus {
-        background: #43A047;
-        }
-        .form .message {
-        margin: 15px 0 0;
-        color: #b3b3b3;
-        font-size: 12px;
-        }
-        .form .message a {
-        color: #4CAF50;
-        text-decoration: none;
+        background: #e9381d;
         }
         .form .register-form {
         display: none;
@@ -99,7 +90,7 @@
         body {
         background: #76b852; /* fallback for old browsers */
         background: rgb(141,194,111);
-        background: linear-gradient(90deg, rgba(141,194,111,1) 0%, rgba(118,184,82,1) 50%);
+        background: linear-gradient(90deg, #e9381d 0%, #e9381d 50%);
         font-family: "Roboto", sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;      
@@ -109,11 +100,10 @@
 <body>
     <div class="login-page">
         <div class="form">
-          <form class="login-form" action="login.php" method="post">
+          <form class="login-form" action="sign_up.php" method="post">
             <input type="text" placeholder="username" name="username"/>
             <input type="password" placeholder="password" name="password"/>
-            <button type="submit">login</button>
-            <p class="message">Not registered? <a href="sign_up.html">Create an account</a></p>
+            <button type="submit">Sign Up</button>
           </form>
         </div>
       </div>

@@ -1,8 +1,6 @@
 <?php
 
-    session_start();
-
-    $connect = mysqli_connect("localhost","root","kangji875","login");
+    include "lib.php";
     
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -14,6 +12,8 @@
     $result = mysqli_query($connect,$query);
     $data = mysqli_fetch_array($result);
 
+    $_SESSION['username'] = $data[0];
+
     if(!$data && !$_SESSION['username']) {
         ?>
         <script>
@@ -23,8 +23,7 @@
         <?php
     }
 
-    $_SESSION['username'] = $data[0];
-
+    
 ?>
 
 <!DOCTYPE html>

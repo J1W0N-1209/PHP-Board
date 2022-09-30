@@ -1,4 +1,7 @@
 <?php
+
+    session_start();
+
     $connect = mysqli_connect("localhost","root","kangji875","login");
     
     $username = $_POST['username'];
@@ -10,6 +13,17 @@
     $query = "select * from login where username='$username' and password='$password'";
     $result = mysqli_query($connect,$query);
     $data = mysqli_fetch_array($result);
+
+    if(!$data && !$_SESSION['username']) {
+        ?>
+        <script>
+            alert("로그인 실패 !");
+            location.href="login.html";
+        </script>
+        <?php
+    }
+
+    $_SESSION['username'] = $data[0];
 
 ?>
 
@@ -176,7 +190,7 @@
            </div>
           <button>Follow</button>
           <div class="user-profile-data">
-            <h1><?php echo $username?></h1>
+            <h1><?php echo $_SESSION['username']?></h1>
             <p>Web Hacking !</p>
           </div> 
           <div class="description-profile"> Web Hacking || Web Develope</div>

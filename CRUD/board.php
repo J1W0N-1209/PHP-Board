@@ -23,6 +23,14 @@
                 <?php
                     include "lib.php";
 
+                    if(!$_SESSION["user"]) {
+                        ?>
+                        <script>
+                            location.href="user.php";
+                        </script>
+                        <?php
+                    }
+
                     $sql = "select * from post order by idx desc";
                     $result = mysqli_query($connect,$sql);
 
@@ -30,8 +38,8 @@
                 ?>
                 <tr>
                     <td> <?= $data["idx"] ?> </td>
-                    <td> <a href="#"><?= $data["title"] ?></a> </td>
-                    <td> <?= $_SESSION["user"] ?> </td>
+                    <td> <a href="contents.php?idx=<?= $data["idx"]?>"><?= $data["title"] ?></a> </td>
+                    <td> <?= $data["user"] ?> </td>
                 </tr>
                 <?php
                     }

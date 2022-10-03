@@ -1,11 +1,14 @@
 <?php
     include "lib.php";
 
+
+
     if (isset($_POST['submit'])) {
         $title = $_POST['title'];
         $contents = $_POST['contents'];
+        $username = $_SESSION['user'];
 
-        $sql = "insert into post (title,contents) values('$title','$contents')";
+        $sql = "insert into post (title,contents,user) values('$title','$contents','$username')";
         $result = mysqli_query($connect,$sql);
 
         if($result) {

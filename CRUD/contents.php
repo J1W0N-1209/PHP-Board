@@ -49,7 +49,7 @@
         <p><strong>제목 : <?= $data['title'] ?></strong> </p>
         <p><strong>내용 : <?= $data['contents'] ?></strong> </p>
 
-        <a class="btn blue" href=""><strong>Delete</strong></a>
+        <a class="btn blue" href="delete.php?idx=<?= $data['idx'] ?>"><strong>Delete</strong></a>
     </div>
 </body>
 </html>

@@ -34,11 +34,21 @@
             
         }
         .btn:active{
-            transform: translateY(3px);
+        transform: translateY(3px);
         }
         .btn.blue{
-            background-color: #ff521e;
-            border-bottom:5px solid #c1370e;
+        background-color: #1f75d9;
+        border-bottom:5px solid #165195;
+        }
+        .btn.blue:active{
+        border-bottom:2px solid #165195;
+        }
+        .btn.red{
+        background-color: #ff521e;
+        border-bottom:5px solid #c1370e;
+        }
+        .btn.red:active{
+        border-bottom:2px solid #c1370e;
         }
     </style>
 </head>
@@ -50,6 +60,7 @@
         <p><strong>내용 : <?= $data['contents'] ?></strong> </p>
 
         <a class="btn blue" href="delete.php?idx=<?= $data['idx'] ?>"><strong>Delete</strong></a>
+        <a class="btn red" href="update.php?idx=<?= $data['idx'] ?>"><strong>Update</strong></a>
     </div>
 </body>
 </html>
